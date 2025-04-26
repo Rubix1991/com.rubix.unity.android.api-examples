@@ -1,10 +1,5 @@
 using Rubix.Unity.Android.App;
 using Rubix.Unity.Android.Content;
-using Rubix.Unity.Android.Hardware.Input;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
-using UnityEngine.Android;
 using UnityEngine.UIElements;
 
 public class Example_03_Dialogs : Example_Base

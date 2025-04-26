@@ -1,7 +1,6 @@
 using Rubix.Unity.Android.Content;
 using Rubix.Unity.Android.Net;
 using Rubix.Unity.Android.Provider;
-using Rubix.Unity.Java.Net;
 using UnityEngine.UIElements;
 
 public class Example_04_Settings : Example_Base

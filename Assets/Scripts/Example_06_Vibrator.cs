@@ -1,9 +1,5 @@
 using Rubix.Unity.Android.Content;
-using Rubix.Unity.Android.Net;
 using Rubix.Unity.Android.OS;
-using Rubix.Unity.Android.Provider;
-using Rubix.Unity.Java.Net;
-using UnityEngine;
 using UnityEngine.UIElements;
 
 public class Example_05_Vibrator: Example_Base
