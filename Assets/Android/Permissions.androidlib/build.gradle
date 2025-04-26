@@ -1,0 +1,38 @@
+apply plugin: 'com.android.library'
+
+dependencies {
+	implementation fileTree(dir: 'libs', include: ['*.jar'])
+}
+
+def getCompileSdk(unityLib) {
+    def unityCompileSdk = unityLib.compileSdkVersion
+    def version = unityCompileSdk.find('\\d+').toInteger()
+    if (version < 33) {
+        return 33
+    }
+    return version
+}
+
+android {
+    namespace "com.rubix.permissions"
+	
+    def unityLib = project(':unityLibrary').extensions.getByName('android')
+    compileSdkVersion getCompileSdk(unityLib)
+    buildToolsVersion unityLib.buildToolsVersion
+	
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        minSdk 22
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile ('proguard-android-optimize.txt'), 'proguard-rules. pro'
+        }
+    }
+}

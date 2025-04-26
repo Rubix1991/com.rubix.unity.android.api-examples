@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "com.rubix.unity.android.api-source": "file:../../com.rubix.unity.android.api-source",
+    "com.unity.ide.rider": "3.0.35",
+    "com.unity.ide.visualstudio": "2.0.23",
+    "com.unity.mobile.android-logcat": "1.4.4",
+    "com.unity.modules.imgui": "1.0.0",
+    "com.unity.modules.uielements": "1.0.0"
+  }
+}

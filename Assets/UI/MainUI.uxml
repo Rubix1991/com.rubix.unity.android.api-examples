@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+  <ui:VisualElement name="container" style="flex-grow: 1; flex-direction: row;">
+    <ui:VisualElement name="left-view" style="width: 200px; flex-shrink: 0;">
+      <ui:ScrollView name="button-list" style="flex-grow: 1;">
+      </ui:ScrollView>
+    </ui:VisualElement>
+    <ui:VisualElement name="splitter" style="width: 5px; background-color: rgb(100, 100, 100); cursor: resize-horizontal;" />
+    <ui:VisualElement name="right-view" style="flex-grow: 1;" />
+  </ui:VisualElement>
+</ui:UXML>
