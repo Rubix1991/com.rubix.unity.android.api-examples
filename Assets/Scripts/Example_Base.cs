@@ -17,4 +17,13 @@ public abstract class Example_Base : MonoBehaviour
         btn.style.width = new StyleLength(new Length(100, LengthUnit.Percent));
         return btn;
     }
+
+    protected VisualElement CreateLabel(string name)
+    {
+        var label = new Label(name);
+        label.text = name;
+        label.style.width = new StyleLength(new Length(100, LengthUnit.Percent));
+        label.style.color = Color.white;
+        return label;
+    }
 }
