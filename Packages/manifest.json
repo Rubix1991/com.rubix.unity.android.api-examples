@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.rubix.unity.android.api-source": "file:../../com.rubix.unity.android.api-source",
+    "com.rubix.unity.android.api": "git@github.com:Rubix1991/com.rubix.unity.android.api.git#release/api-34",
     "com.unity.ide.rider": "3.0.35",
     "com.unity.ide.visualstudio": "2.0.23",
     "com.unity.mobile.android-logcat": "1.4.4",
