@@ -4,35 +4,31 @@ dependencies {
 	implementation fileTree(dir: 'libs', include: ['*.jar'])
 }
 
-def getCompileSdk(unityLib) {
-    def unityCompileSdk = unityLib.compileSdkVersion
-    def version = unityCompileSdk.find('\\d+').toInteger()
-    if (version < 33) {
-        return 33
-    }
-    return version
-}
-
 android {
-    namespace "com.rubix.permissions"
-	
-    def unityLib = project(':unityLibrary').extensions.getByName('android')
-    compileSdkVersion getCompileSdk(unityLib)
-    buildToolsVersion unityLib.buildToolsVersion
-	
+    namespace "com.company.myfeature"
+    compileSdk getProperty("unity.compileSdkVersion") as int
+    buildToolsVersion = getProperty("unity.buildToolsVersion")
+
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.valueOf(getProperty("unity.javaCompatabilityVersion"))
+        targetCompatibility JavaVersion.valueOf(getProperty("unity.javaCompatabilityVersion"))
     }
 
     defaultConfig {
-        minSdk 22
+        minSdk getProperty("unity.minSdkVersion") as int
+        targetSdk getProperty("unity.targetSdkVersion") as int
+        ndk {
+            abiFilters.addAll(getProperty("unity.abiFilters").tokenize(','))
+            debugSymbolLevel getProperty("unity.debugSymbolLevel")
+        }
+        versionCode getProperty("unity.versionCode") as int
+        versionName getProperty("unity.versionName")
     }
 
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile ('proguard-android-optimize.txt'), 'proguard-rules. pro'
+            proguardFiles getDefaultProguardFile    ('proguard-android-optimize.txt'), 'proguard-rules. pro'
         }
     }
 }
