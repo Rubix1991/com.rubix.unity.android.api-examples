@@ -1,7 +1,6 @@
 using UnityEngine.UIElements;
 using Rubix.Unity.Android.Widget;
 using Rubix.Unity.Android.App;
-
 public class Example_01_Toasts : Example_Base
 {
     public override string ButtonName => "Toasts";
@@ -19,7 +18,7 @@ public class Example_01_Toasts : Example_Base
 
         content.Add(CreateButton("Long Toast", () =>
         {
-            using var toast = Toast.MakeText(Rubix.Unity.Android.App.Activity.CurrentActivity,
+            using var toast = Toast.MakeText(Activity.CurrentActivity,
                 "This is a long toast",
                 Toast.LENGTH_LONG);
             toast.Show();

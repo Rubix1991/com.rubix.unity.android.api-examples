@@ -1,6 +1,8 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
     <ui:VisualElement name="content" class="container" style="flex-grow: 1; flex-shrink: 0;">
         <ui:Label text="Input Devices:" style="border-left-color: rgb(0, 0, 0); color: rgb(255, 255, 255); width: 100%; border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; background-color: rgb(0, 0, 0);" />
-        <ui:ListView name="listViewInputDevices" style="flex-grow: 1; flex-shrink: 0; width: 100%; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); background-color: rgb(0, 0, 0);" />
+        <ui:ScrollView horizontal-scroller-visibility="AlwaysVisible" vertical-scroller-visibility="AlwaysVisible" style="flex-grow: 1; flex-shrink: 0; width: 100%; background-color: rgb(0, 0, 0);">
+            <ui:ListView name="listViewInputDevices" style="flex-grow: 1; flex-shrink: 0; width: auto; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); background-color: rgb(0, 0, 0);" />
+        </ui:ScrollView>
     </ui:VisualElement>
 </ui:UXML>
