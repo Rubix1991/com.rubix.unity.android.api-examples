@@ -1,2 +1,3 @@
-# com.rubix.unity.android.api-examples
-Provides examples for com.rubix.unity.android.api package.
+# Examples showing how to use C# wrappers for Android Java APIs
+
+For more information, check out [here](https://github.com/Rubix1991/com.rubix.unity.android.api).
