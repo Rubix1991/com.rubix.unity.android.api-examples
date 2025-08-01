@@ -2,16 +2,49 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using System.Collections.Generic;
 using System;
+using static MainUIController;
 
 public class MainUIController : MonoBehaviour
 {
     public VisualTreeAsset mainUIAsset;
 
+    public class Example
+    {
+        private bool m_Initialized;
+        public Example_Base Controller { get; }
+        public VisualElement ContentView { get; }
+
+        public Example(Example_Base controller, VisualElement contentView)
+        {
+            m_Initialized = false;
+            Controller = controller;
+            ContentView = contentView;
+            Disable();
+        }
+
+        public void Disable()
+        {
+            ContentView.style.display = DisplayStyle.None;
+            Controller.enabled = false;
+        }
+
+        public void Enable()
+        {
+            if (m_Initialized == false)
+            {
+                Controller.Initialize(ContentView);
+                m_Initialized = true;
+            }
+
+            ContentView.style.display = DisplayStyle.Flex;
+            Controller.enabled = true;
+        }
+    }
+
     private VisualElement root;
-    private VisualElement leftView;
     private VisualElement rightView;
     private ScrollView buttonList;
-    private Dictionary<string, VisualElement> contentViews;
+    private Dictionary<string, Example> contentViews;
 
     void Start()
     {
@@ -19,14 +52,13 @@ public class MainUIController : MonoBehaviour
 
         mainUIAsset.CloneTree(root);
 
-        leftView = root.Q<VisualElement>("left-view");
         rightView = root.Q<VisualElement>("right-view");
         buttonList = root.Q<ScrollView>("button-list");
 
         if (Application.platform != RuntimePlatform.Android)
             root.Add(new HelpBox($"Examples only work on Android, current platform is {Application.platform}.", HelpBoxMessageType.Warning));
 
-        contentViews = new Dictionary<string, VisualElement>();
+        contentViews = new Dictionary<string, Example>();
         var examples = GetComponentsInChildren<Example_Base>();
         foreach (var example in examples)
         {
@@ -62,24 +94,16 @@ public class MainUIController : MonoBehaviour
         if (content == null)
             throw new Exception($"Failed to find content element in {contentAsset.name}");
         rightView.Add(content);
-        contentViews.Add(key, content);
-        content.style.display = DisplayStyle.None;
 
-        example.Initialize(content);
+        contentViews.Add(key, new Example(example, content));
     }
 
     private void OnButtonClicked(string buttonName)
     {
-        // Hide all content views
-        foreach (var contentView in contentViews.Values)
-        {
-            contentView.style.display = DisplayStyle.None;
-        }
+        foreach (var example in contentViews.Values)
+            example.Disable();
 
-        // Show the selected content view
-        if (contentViews.TryGetValue(buttonName, out var selectedContentView))
-        {
-            selectedContentView.style.display = DisplayStyle.Flex;
-        }
+        if (contentViews.TryGetValue(buttonName, out var selectedExample))
+            selectedExample.Enable();
     }
 }
