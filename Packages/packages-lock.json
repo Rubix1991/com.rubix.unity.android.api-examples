@@ -7,7 +7,7 @@
       "dependencies": {
         "com.unity.modules.androidjni": "1.0.0"
       },
-      "hash": "8d2543e0e28305404dcaee6d0568780e4baba6a1"
+      "hash": "cee26aaa2708daacf8f22a3e82f20dd0b7785099"
     },
     "com.unity.ext.nunit": {
       "version": "2.0.5",
@@ -16,7 +16,7 @@
       "dependencies": {}
     },
     "com.unity.ide.rider": {
-      "version": "3.0.35",
+      "version": "3.0.36",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -34,7 +34,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.mobile.android-logcat": {
-      "version": "1.4.4",
+      "version": "1.4.5",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
