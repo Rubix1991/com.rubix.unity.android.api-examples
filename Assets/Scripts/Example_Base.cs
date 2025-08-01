@@ -8,8 +8,12 @@ public abstract class Example_Base : MonoBehaviour
 
     public abstract void Initialize(VisualElement content);
 
+    protected virtual void Update()
+    {
 
-    protected VisualElement CreateButton(string name, System.Action action)
+    }
+
+    protected Button CreateButton(string name, System.Action action)
     {
         var btn = new Button(action);
         btn.text = name;
@@ -18,7 +22,16 @@ public abstract class Example_Base : MonoBehaviour
         return btn;
     }
 
-    protected VisualElement CreateLabel(string name)
+    protected TextField CreateTextField(string name)
+    {
+        var textField = new TextField();
+        textField.value = name;
+        textField.style.flexGrow = 1;
+        textField.style.width = new StyleLength(new Length(100, LengthUnit.Percent));
+        return textField;
+    }
+
+    protected Label CreateLabel(string name)
     {
         var label = new Label(name);
         label.text = name;
