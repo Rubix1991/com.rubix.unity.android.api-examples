@@ -23,4 +23,4 @@ For more information, check out [here](https://github.com/Rubix1991/com.rubix.un
 | Browser | Shows how to open native browser. |
 | Vibrator | Shows how use Android's vibrator. |
 | Rate App | Shows how to rate an app. |
-| Insets | Provides the ability to show/hide status bar, navigation bar. Also shows their sizes. |
+| Insets | Provides the ability to show/hide status bar, navigation bar. Also shows their sizes.<br><br>**Note:** This example will only work correctly with Unity 6000.1.14f1 and up, in previous versions, Unity would always reset status bar and navigation bar, if user attempts to manually show/hide them. |
