@@ -17,7 +17,7 @@ public class Example_07_RateApp: Example_Base
 
     public override void Initialize(VisualElement content)
     {
-        m_ThisPackageName = Context.CurrentContext.GetPackageName();
+        m_ThisPackageName = Context.CurrentContext != null ? Context.CurrentContext.GetPackageName() : "<None>";
         m_GoogleChromePackageName = "com.android.chrome";
         content.Add(CreateButton($"Rate This App\n({m_ThisPackageName})", () => RateApp(m_ThisPackageName)));
         content.Add(CreateButton($"Rate Google Chrome\n({m_GoogleChromePackageName})", () => RateApp(m_GoogleChromePackageName)));
