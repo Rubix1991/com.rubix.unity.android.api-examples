@@ -4,6 +4,7 @@ For more information, check out [here](https://github.com/Rubix1991/com.rubix.un
 
 ## Requirements
 
+* [Git](https://git-scm.com/install/)
 * Unity 6000.0.47f1 or higher 
 * Unity Android Support
 
