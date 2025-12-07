@@ -1,13 +1,13 @@
 {
   "dependencies": {
     "com.rubix.unity.android.api": {
-      "version": "git@github.com:Rubix1991/com.rubix.unity.android.api.git#release/api-36",
+      "version": "https://github.com/Rubix1991/com.rubix.unity.android.api.git#release/api-36",
       "depth": 0,
       "source": "git",
       "dependencies": {
         "com.unity.modules.androidjni": "1.0.0"
       },
-      "hash": "b1c0afd576f41332a9c1e1281050d1cecc3c2c86"
+      "hash": "62e4ff6c893ecdeb7798915afac0fd600b8b2cf5"
     },
     "com.unity.ext.nunit": {
       "version": "2.0.5",
